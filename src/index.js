@@ -29,7 +29,7 @@ root.render(
           }}
         >
           <TaskProvider>
-            <Router basename="/home">
+            <Router basename="/pixel">
               <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
