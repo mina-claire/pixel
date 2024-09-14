@@ -42,6 +42,7 @@ function Login() {
   const handleLogin = async (response) => {
     setSignIn(true);
     const userData = await requestLogin(response);
+    console.log(userData);
     setUser(userData);
   };
 
