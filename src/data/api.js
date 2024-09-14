@@ -75,33 +75,42 @@ export const getTasks = async (userID) => {
 export const getTask = async (userID, taskID) => {
   try {
     const response = await fetch(`${apiURL}tasks/${taskID}`);
-    const task = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch task: ${response.statusText}`);
+    }
 
-    const usersTask = task.find((e) => e.userID === userID);
+    const task = await response.json();  // Expecting a single task object
 
-    if (!usersTask) {
+    // Ensure the task belongs to the user
+    if (task.userID !== userID) {
       throw new Error(`Task not found for user ID: ${userID}`);
     }
 
+    // Handle subtasks parsing if stored as a string in the DB
     let parsedSubtasks = [];
-    if (typeof usersTask.subtasks === "string") {
+    if (typeof task.subtasks === "string") {
       try {
-        parsedSubtasks = JSON.parse(usersTask.subtasks);
+        parsedSubtasks = JSON.parse(task.subtasks);
       } catch (error) {
         console.error("Error parsing subtasks for task ID:", taskID, error);
       }
     } else {
-      parsedSubtasks = usersTask.subtasks;
+      parsedSubtasks = task.subtasks;
     }
+
+    // Return the task with parsed subtasks
     return {
-      ...usersTask,
-      subtasks: parsedSubtasks, 
+      ...task,
+      subtasks: parsedSubtasks,
     };
 
   } catch (error) {
     console.error('Error when fetching user task:', error);
+    return null;  // Handle the error case
   }
 };
+
 
 export const saveTask = async (task) => {
 
@@ -115,6 +124,7 @@ export const saveTask = async (task) => {
       body: JSON.stringify(task),
     });
 
+    console.log("RESPONSE: ", response.status)
     // If the task does not exist, create a new task
     if (response.status === 404) {
       response = await fetch(`${apiURL}tasks/`, {
