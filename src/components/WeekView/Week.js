@@ -150,7 +150,7 @@ const Week = () => {
                 <div>
                     <button 
                         className="border-2 border-accent hover:border-text border-md rounded-full
-                         text-text py-xxs px-base ml-lg hover:text-h1"
+                         text-text py-xxs px-base ml-lg hover:text-h1 hover:scale-[1.03]"
                         onClick={goToToday}  // Scroll to today's date when clicked
                     >
                         today
