@@ -259,7 +259,7 @@ export const requestLogin = async (response) => {
   console.log(token);
   
   try {
-    const serverResponse = await fetch(`${apiURL}login/callback`, {
+    const serverResponse = await fetch(`${apiURL}callback`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
