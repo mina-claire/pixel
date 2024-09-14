@@ -2,7 +2,7 @@
  * Helper functions for API requests
  */
 
-const apiURL = 'http://localhost:2500/'
+const apiURL = ' https://pixel-server-bb389e7b4534.herokuapp.com/'
 
 /**
  * Fetches users from the API.
