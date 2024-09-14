@@ -45,7 +45,9 @@ function Login() {
     setUser(userData);
   };
 
-  console.log("Welcome to Pixel 🎀");
+  useEffect(() => {
+    console.log("Welcome to Pixel 🎀");
+  }, []);
 
   return (
     <div className="h-[100vh] w-[100vw] flex items-center justify-center overflow-hidden">

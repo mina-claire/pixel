@@ -255,6 +255,8 @@ export const existsOnChannelsApi = async (channelID) => {
 
 export const requestLogin = async (response) => {
   const token = response.credential;
+
+  console.log(token);
   
   try {
     const serverResponse = await fetch(`${apiURL}login/callback`, {
