@@ -28,12 +28,12 @@ root.render(
           }}
         >
           <TaskProvider>
-          <Router basename="/pixel">
-            <Routes>
-              <Route path="/pixel" element={<Login />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-         </Router>
+            <Router>
+              <Routes>
+                <Route path="" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+              </Routes>
+            </Router>
           </TaskProvider>
         </ConfigProvider>
       </ThemeProvider>

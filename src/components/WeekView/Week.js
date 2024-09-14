@@ -144,7 +144,7 @@ const Week = () => {
     return (
         <div className="h-full w-full m-xlg cursor-default overflow-auto scroll-smooth relative z-0">
             <div className="flex flex-row align-center">
-                <div className="text-xlg text-h1 font-heavy mb-md">
+                <div className="text-xlg text-h1 font-heavy mb-lg">
                     {greeting}, {user.firstName}...
                 </div>
                 <div>
