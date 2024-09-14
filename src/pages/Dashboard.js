@@ -6,7 +6,7 @@ import Week from '../components/WeekView/Week';
 import { TaskContext } from '../TaskContext';
 import { useNavigate } from 'react-router-dom';
 
-const apiURL = 'http://localhost:2500/'
+const apiURL = 'https://pixel-server-bb389e7b4534.herokuapp.com/'
 
 /**
  * User Pixel Dashboard Component
