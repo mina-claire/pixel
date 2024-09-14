@@ -28,9 +28,9 @@ root.render(
           }}
         >
           <TaskProvider>
-          <Router>
+          <Router basename="/pixel">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/pixel" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
          </Router>
