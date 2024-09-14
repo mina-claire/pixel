@@ -7,8 +7,7 @@ import { ConfigProvider } from 'antd';
 import { ThemeProvider } from './ThemeProvider.js';
 import { TaskProvider } from './TaskContext';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard.js';
 import Login from './pages/Login.js';
 
